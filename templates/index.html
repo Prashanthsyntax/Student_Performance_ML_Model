@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AI Student Performance Predictor</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+/* =====================================================
+   DESIGN SYSTEM – 25+ YEARS UI MINDSET
+===================================================== */
+:root {
+    --bg-main: #060a14;
+    --bg-glass: rgba(255,255,255,0.07);
+    --border-glass: rgba(255,255,255,0.14);
+
+    --neon-cyan: #00f5ff;
+    --neon-purple: #7c7cff;
+    --neon-pink: #ff4fd8;
+
+    --text-main: #ffffff;
+    --text-muted: #aeb4d6;
+
+    --radius-xl: 30px;
+    --radius-lg: 20px;
+}
+
+/* =====================================================
+   RESET
+===================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Inter, Segoe UI, system-ui, sans-serif;
+}
+
+/* =====================================================
+   BODY / BACKGROUND
+===================================================== */
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 15% 10%, rgba(124,124,255,0.12), transparent 35%),
+        radial-gradient(circle at 85% 80%, rgba(0,245,255,0.10), transparent 40%),
+        var(--bg-main);
+    color: var(--text-main);
+}
+
+/* =====================================================
+   MAIN LAYOUT
+===================================================== */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 100px 24px;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 80px;
+    align-items: center;
+}
+
+/* =====================================================
+   LEFT CONTENT
+===================================================== */
+.badges {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 42px;
+    flex-wrap: wrap;
+}
+
+.badge {
+    padding: 10px 18px;
+    border-radius: 999px;
+    font-size: 13px;
+    letter-spacing: 0.4px;
+    background: var(--bg-glass);
+    border: 1px solid var(--border-glass);
+    backdrop-filter: blur(10px);
+}
+
+.content h1 {
+    font-size: 56px;
+    line-height: 1.1;
+    margin-bottom: 26px;
+    background: linear-gradient(
+        90deg,
+        var(--neon-cyan),
+        var(--neon-purple),
+        var(--neon-pink)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.content p {
+    font-size: 18px;
+    line-height: 1.75;
+    max-width: 540px;
+    color: var(--text-muted);
+    margin-bottom: 44px;
+}
+
+/* =====================================================
+   CTA GROUP
+===================================================== */
+.cta-group {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.cta-btn {
+    padding: 18px 40px;
+    border-radius: 999px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #000;
+    background: linear-gradient(
+        135deg,
+        var(--neon-cyan),
+        var(--neon-purple)
+    );
+    text-decoration: none;
+    box-shadow:
+        0 20px 40px rgba(0,245,255,0.35),
+        inset 0 0 0 1px rgba(255,255,255,0.25);
+    transition: all 0.25s ease;
+}
+
+.cta-btn:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        0 28px 70px rgba(0,245,255,0.55),
+        inset 0 0 0 1px rgba(255,255,255,0.35);
+}
+
+/* =====================================================
+   RIGHT GLASS PANEL
+===================================================== */
+.glass-card {
+    background: linear-gradient(
+        180deg,
+        rgba(255,255,255,0.10),
+        rgba(255,255,255,0.04)
+    );
+    border: 1px solid var(--border-glass);
+    border-radius: var(--radius-xl);
+    padding: 42px;
+    backdrop-filter: blur(18px);
+    box-shadow:
+        0 40px 90px rgba(0,0,0,0.65),
+        inset 0 0 0 1px rgba(255,255,255,0.06);
+}
+
+.glass-card h2 {
+    font-size: 28px;
+    margin-bottom: 26px;
+    color: var(--neon-cyan);
+}
+
+.glass-card ul {
+    list-style: none;
+    display: grid;
+    gap: 20px;
+}
+
+.glass-card li {
+    display: flex;
+    gap: 16px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--text-muted);
+}
+
+.dot {
+    width: 11px;
+    height: 11px;
+    margin-top: 7px;
+    border-radius: 50%;
+    background: linear-gradient(
+        135deg,
+        var(--neon-cyan),
+        var(--neon-purple)
+    );
+    box-shadow: 0 0 12px rgba(0,245,255,0.6);
+    flex-shrink: 0;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+footer {
+    text-align: center;
+    padding: 60px 20px 30px;
+    font-size: 13px;
+    color: #8e94c9;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+@media (max-width: 900px) {
+    .container {
+        grid-template-columns: 1fr;
+        gap: 70px;
+        padding: 70px 20px;
+    }
+
+    .content h1 {
+        font-size: 42px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- LEFT -->
+    <div class="content">
+        <div class="badges">
+            <div class="badge">AI Powered</div>
+            <div class="badge">ML Regression</div>
+            <div class="badge">Education Analytics</div>
+        </div>
+
+        <h1>
+            Student Exam Performance<br>
+            Prediction Platform
+        </h1>
+
+        <p>
+            An enterprise-grade machine learning system that predicts
+            student mathematics performance using demographic,
+            academic, and preparation indicators — engineered
+            with clean architecture and professional UI standards.
+        </p>
+
+        <div class="cta-group">
+            <a href="/predictdata" class="cta-btn">
+                Launch Prediction System →
+            </a>
+        </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="glass-card">
+        <h2>Why This System?</h2>
+        <ul>
+            <li><span class="dot"></span>Accurate ML-based mathematics score prediction</li>
+            <li><span class="dot"></span>Structured data ingestion & preprocessing</li>
+            <li><span class="dot"></span>Flask-ready UI for real deployment</li>
+            <li><span class="dot"></span>Portfolio-grade, interview-ready design</li>
+            <li><span class="dot"></span>Built with real-world UX principles</li>
+        </ul>
+    </div>
+
+</div>
+
+<footer>
+    © 2026 • AI Student Performance Predictor • Pendem Prashanth
+</footer>
+
+</body>
+</html>
