@@ -6,7 +6,7 @@
 
 ## Home Page
 
-![alt text](<Screenshot 2026-01-13 161009.png>)
+![alt text](Screenshot 2026-01-13 161009.png)
 
 🧠 HOW the Model is Actually Predicting
 
